@@ -1,0 +1,39 @@
+@()
+
+<html>
+<head>
+
+    <title>Table</title>
+</head>
+<body>
+<table>
+   <tr>
+       <th>Touched Lead Customers</th>
+       <th>Trial Customers</th>
+       <th>Signed Customers</th>
+       <th> Active Customers</th>
+       <th>Super Active Customers</th>
+       <th>Inactive Customers</th>
+       <th>Defaulted Customers</th>
+       <th>Lost Customers</th>
+   </tr>
+</table>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: '/data',   <!-- url for saving-->
+            dataType: 'JSON',
+            type: "GET",
+            success: function (data) {
+                'gatewayId': gateway_id,
+                'name': name,
+                'created_on' : created_on
+             },
+            error: function (data) {
+                console.log(" error"+ data);
+            }
+        });
+    });
+</script>
